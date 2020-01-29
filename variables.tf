@@ -3,11 +3,6 @@ variable "name" {
   description = "Unique name for resources"
 }
 
-variable "environment" {
-  type        = "string"
-  description = "Environment - appended to ${var.name} for resources"
-}
-
 variable "container_definitions" {
   type        = "string"
   description = "Task container defintions"

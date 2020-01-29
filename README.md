@@ -7,10 +7,7 @@ A Terraform module to create a scheduled task in AWS ECS
 ``` hcl
 module "scheduled_task" {
   source  = "github.com:dxw/terraform-aws-ecs-scheduled-task"
-  version = "1.2"
-
   name                  = "my_awesome_task"
-  environment           = "staging"
   container_definitions = "${file(./path/to/container-definitions.json)}"
   schedule_expression   = "cron(0 * * * ? 0)"
   cluster_arn           = "my_awesome_cluster"
@@ -28,11 +25,6 @@ The following variables can be configured:
 #### `name`
 
 - **Description**: Unique name for resources
-- **Default**: `none`
-
-#### `environment`
-
-- **Description**: Environment - appended to ${var.name} for resources
 - **Default**: `none`
 
 #### `container_definitions`
